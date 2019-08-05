@@ -1,0 +1,30 @@
+:host {
+    background: azure;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+header {
+    font-size: 4em;
+    line-height: 2em;
+    text-align: center;
+    background: blue;
+    color: #fff;
+    border-bottom: 1px solid aquamarine;
+}
+.searchClient {
+    padding: 20px;
+}
+.searchClient input {
+    margin: 0 10px;
+}
+.clientInformationSection {
+    position: relative;
+}
+[loading] .loadingText {
+    display: block;
+}
+.loadingText {
+    display: none;
+}
+

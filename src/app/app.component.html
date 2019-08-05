@@ -1,0 +1,12 @@
+<header>Banking Cleric Interface</header>
+<section class="searchClient">
+  <div>Find Client Information</div>
+  Client Id: <input (keyup.enter)="findById()" [(ngModel)]="id"> <button (click)="findById()">Find Information</button>
+
+</section>
+
+<section class="clientInformationSection" [attr.loading]="isLoading" *ngIf="loadingId">
+  <hr/>
+  <span class="loadingText">Loading information for {{loadingId}}</span>
+  <app-client-details [clientInfo]="clientInfo" [clientId]="loadingId" *ngIf="clientInfo"></app-client-details>
+</section>

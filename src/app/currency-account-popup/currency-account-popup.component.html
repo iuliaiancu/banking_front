@@ -1,0 +1,14 @@
+<div class="newCurrentAccountPopup">
+  Initial Deposit
+  <input [(ngModel)]="depositAmmount"/>
+  <div>
+    Account Type: 
+    <select [(ngModel)]="accountType">
+        <option selected [ngValue]="'DEFAULT_ACCOUNT'">DEFAULT ACCOUNT</option>
+        <option [ngValue]="'CURRENT_ACCOUNT'">CURRENT ACCOUNT</option>
+        <option [ngValue]="'CREDIT'">CREDIT</option>
+        <option [ngValue]="'DEBIT'">DEBIT</option>
+    </select>
+  </div>
+  <button (click)="create.next({initialDeposit: depositAmmount, accountType: accountType})">Create</button>
+</div>

@@ -1,0 +1,20 @@
+<div>Client Name: {{clientInfo.name}} {{clientInfo.surname}} </div>
+<div>Accounts <button (click)="showCurrencyPopup = true">New Current Account</button></div>
+<!-- <ul>
+  <li *ngFor="let account of clientInfo.accounts">
+    Current Sold: {{account.sold}} Type: {{account.type}}
+  </li>
+</ul> -->
+<div>Recent Transactions: {{clientInfo.accountTransactions.length===0?"None": ""}}</div>
+<div *ngFor="let accountTransaction of clientInfo.accountTransactions">
+  <div>Balance: {{accountTransaction.balance}}</div>
+  <ul>
+    <li *ngFor="let transaction of accountTransaction.transactions" >
+       To: "{{transaction.accountId}}", Sum: "{{transaction.sum}}", Date: "{{transaction.date | date:"long"}}"
+    </li>
+    <ng-template #deposit>
+      Deposit
+    </ng-template>
+  </ul>
+</div>
+<app-currency-account-popup *ngIf="showCurrencyPopup" (create)="createCurrentAccount($event)"></app-currency-account-popup>
