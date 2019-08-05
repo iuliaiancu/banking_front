@@ -1,7 +1,14 @@
 <header>Banking Cleric Interface</header>
 <section class="searchClient">
   <div>Find Client Information</div>
-  Client Id: <input (keyup.enter)="findById()" [(ngModel)]="id"> <button (click)="findById()">Find Information</button>
+  Client name: 
+  <select [(ngModel)]="id">
+      <option selected [ngValue]="1">Anna Smith</option>
+      <option [ngValue]="2">John Daniels</option>
+      <option [ngValue]="3">Karina Mackenzie</option>
+  </select>
+  
+  <button (click)="findById()">Find Information</button>
 
 </section>
 
