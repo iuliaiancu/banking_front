@@ -7,7 +7,9 @@
 </ul> -->
 <div>Recent Transactions: {{clientInfo.accountTransactions.length===0?"None": ""}}</div>
 <div *ngFor="let accountTransaction of clientInfo.accountTransactions">
-  <div>Balance: {{accountTransaction.balance}}</div>
+  <div>Account id: {{accountTransaction.accountId}}</div>
+  <div>Account type: {{accountTransaction.accountType}}</div>
+  <div>Account balance: {{accountTransaction.balance}}</div>
   <ul>
     <li *ngFor="let transaction of accountTransaction.transactions" >
        To: "{{transaction.accountId}}", Sum: "{{transaction.sum}}", Date: "{{transaction.date | date:"long"}}"
